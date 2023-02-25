@@ -60,12 +60,12 @@ def to_standard(expression):
         return str(expression)
 
 
-def to_latex(expression):
+def to_tex(expression):
     if isinstance(expression, str):
         return expression
     elif isinstance(expression, tuple):
-        left = to_latex(expression[0])
-        right = to_latex(expression[1])
+        left = to_tex(expression[0])
+        right = to_tex(expression[1])
         operator = expression[2]
         if operator == '+':
             return f"({left} + {right})"
@@ -74,7 +74,7 @@ def to_latex(expression):
         elif operator == '*':
             return f"{left} \\times {right}"
         elif operator == '/':
-            return f"\\frac{{{to_latex(left)}}}{{{to_latex(right)}}}"
+            return f"\\frac{{{to_tex(left)}}}{{{to_tex(right)}}}"
     else:
         return str(expression)
 
@@ -98,13 +98,13 @@ def main():
     expression = de_solve(n, depth)
 
     standard = to_standard(expression)
-    latex = to_latex(expression)
+    tex = to_tex(expression)
 
     # Verify that the expression is correct
     assert eval(standard) == n, "Expression does not evaluate to n"
 
     print(f"Standard Format:\n{standard}")
-    print(f"\nLatex Format:\n{latex}")
+    print(f"\nTeX Format:\n{tex}")
 
 
 if __name__ == '__main__':
