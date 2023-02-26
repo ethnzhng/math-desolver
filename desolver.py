@@ -3,11 +3,12 @@ import random
 
 
 def factors(n):
-    # Return a list of factors of n (excluding 1 and n)
+    """Return a list of factors of n (excluding 1 and n)"""
     return [x for x in range(2, n) if n % x == 0]
 
 
 def de_solve(n, depth):
+    """Generate arithmetic expression recursively"""
     if n == 1 or n == 2:
         return str(n)
     # Prevent hanging on large numbers
@@ -49,6 +50,7 @@ def de_solve(n, depth):
 
 
 def to_standard(expression):
+    """Convert tuple form expression to standard format"""
     if isinstance(expression, str):
         return expression
     elif isinstance(expression, tuple):
@@ -61,6 +63,7 @@ def to_standard(expression):
 
 
 def to_tex(expression):
+    """Convert tuple form expression to TeX format"""
     if isinstance(expression, str):
         return expression
     elif isinstance(expression, tuple):
@@ -92,9 +95,7 @@ def main():
         print("Error: Both arguments must be integers")
         sys.exit(1)
 
-    n = int(sys.argv[1])
-    depth = int(sys.argv[2])
-
+    # Generate the expression
     expression = de_solve(n, depth)
 
     standard = to_standard(expression)
