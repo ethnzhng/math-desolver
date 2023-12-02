@@ -1,15 +1,12 @@
 # Math De-Solver
-This Python program takes a single integer as input, and expands it to an equivalent arithmetic expression of a size corresponding to the specified depth ("de-solving it"). The output expression, which simplifies to the input number, is returned in a standard format that can be plugged into a calculator program, as well as in TeX formatting.
+This whimsical Python script takes a single integer as input, and expands it to an equivalent arithmetic expression of a size corresponding to the specified depth ("de-solving it"). The output expression, which simplifies to the input number, is returned in a standard format that can be plugged into a calculator program, as well as in TeX formatting.
 
 Note that the expression tree will not always reach the maximum depth specified due to limitations regarding keeping every operand an integer, as well as avoiding huge numbers that would make the program hang.
 
-I'm not quite sure what the point of this program is; it was just a random silly idea I had. Maybe it can be used to practice your TI-84 input skills or something. 🤷
 
 ### Usage
 
 `python desolver.py <Input integer> <Max depth of expression tree>`
-
-It should work with any reasonably recent Python 3 version.
 
 Example output for ``python desolver.py 42 8``:
 ```
@@ -27,7 +24,6 @@ The output expression simplified to 42. The corresponding <a href="https://latex
 \
 As a more extreme example, by increasing the depth you can create even further <a href="https://raw.githubusercontent.com/ethnzhng/math-desolver/main/img/bigboi.png" target="_blank">comically large expressions, such as this result</a> from running `python desolver.py 88 16` (zoom and scrolling required for full effect) 
 
-<sub>I tried embedding the image here as a scrollable box but it didn't work : (</sub>
 
 ### Future Improvements
 - [ ] Add more operations/functions
